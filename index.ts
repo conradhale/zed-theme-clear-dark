@@ -12,20 +12,21 @@ const colors = {
   coral: Color.rgb(250, 126, 142),
   auburn: Color.rgb(224, 125, 112),
   orange: Color.rgb(250, 139, 65),
-  cream: Color.rgb(253, 207, 148),
+  peach: Color.rgb(253, 207, 148),
   yellow: Color.rgb(242, 212, 82),
   green: Color.rgb(92, 242, 102),
-  mint: Color.rgb(164, 250, 210),
-  teal: Color.rgb(82, 236, 238),
-  cyan: Color.rgb(81, 226, 245),
-  slate: Color.rgb(130, 185, 204),
-  cornflower: Color.rgb(146, 192, 252),
-  blue: Color.rgb(73, 156, 252),
-  lavender: Color.rgb(190, 179, 252),
-  lilac: Color.rgb(252, 180, 246),
-  purple: Color.rgb(207, 120, 255),
+  mint: Color.rgb(148, 246, 156),
+  sea: Color.rgb(122, 250, 227),
+  cyan: Color.rgb(98, 225, 248),
+  slate: Color.rgb(168, 206, 228),
+  sky: Color.rgb(180, 203, 250),
+  blue: Color.rgb(90, 152, 248),
+  indigo: Color.rgb(124, 120, 252),
+  violet: Color.rgb(172, 171, 255),
+  lavender: Color.rgb(206, 176, 252),
+  purple: Color.rgb(213, 138, 255),
   magenta: Color.rgb(242, 75, 147),
-  pink: Color.rgb(252, 184, 230),
+  salmon: Color.rgb(250, 175, 175),
 };
 
 const accented = (color: ColorInstance, amount: number = 0.5) =>
@@ -161,7 +162,7 @@ const theme_colors = {
       modified: colors.yellow,
       renamed: colors.blue,
       info: colors.blue,
-      hint: colors.cyan,
+      hint: colors.violet,
       predictive: accented(grays["500"]),
       unreachable: grays["700"],
       ignored: grays["500"],
@@ -201,21 +202,19 @@ type SyntaxColor = {
   font_style?: string;
   font_weight?: number;
 };
-
 const syntax_colors: [string, SyntaxColor][] = Object.entries({
   attribute: {
-    color: colors.teal,
+    color: colors.violet,
   },
   boolean: {
-    color: colors.purple,
+    color: colors.indigo,
   },
   comment: {
-    color: grays["500"],
+    color: grays["600"],
     font_style: "italic",
-    font_weight: 300,
   },
   "comment.doc": {
-    color: grays["500"],
+    color: grays["600"],
     font_style: "italic",
     font_weight: 400,
   },
@@ -242,13 +241,13 @@ const syntax_colors: [string, SyntaxColor][] = Object.entries({
     font_weight: 700,
   },
   function: {
-    color: colors.pink,
+    color: colors.violet,
   },
   "function.method": {
     color: colors.lavender,
   },
   "function.special.definition": {
-    color: colors.cyan,
+    color: colors.coral,
   },
   keyword: {
     color: colors.auburn,
@@ -278,40 +277,40 @@ const syntax_colors: [string, SyntaxColor][] = Object.entries({
     color: colors.blue,
   },
   property: {
-    color: colors.cornflower,
+    color: colors.sky,
   },
   punctuation: {
     color: grays["800"],
   },
   "punctuation.bracket": {
-    color: colors.lilac,
+    color: colors.salmon,
   },
   "punctuation.delimiter": {
-    color: grays["600"],
+    color: grays["700"],
   },
   "punctuation.list_marker": {
-    color: grays["600"],
+    color: grays["700"],
   },
   "punctuation.special": {
-    color: colors.mint,
+    color: colors.salmon,
   },
   string: {
-    color: colors.cream,
+    color: colors.peach,
   },
   "string.escape": {
     color: colors.coral,
   },
   "string.regex": {
-    color: colors.cornflower,
+    color: colors.mint,
   },
   "string.special": {
-    color: colors.lilac,
+    color: colors.violet,
   },
   "string.special.symbol": {
     color: colors.lavender,
   },
   tag: {
-    color: colors.cornflower,
+    color: colors.sky,
   },
   "text.literal": {
     color: colors.blue,
@@ -323,9 +322,11 @@ const syntax_colors: [string, SyntaxColor][] = Object.entries({
   type: {
     color: colors.mint,
   },
-  "type.builtin": {},
+  "type.builtin": {
+    color: colors.mint,
+  },
   variable: {
-    color: colors.teal,
+    color: colors.sea,
   },
   "variable.special": {
     color: colors.coral,
@@ -379,7 +380,7 @@ const theme_style = Object.fromEntries([
 ]);
 
 const theme_json = {
-  $schema: "https://zed.dev/schema/themes/v0.1.0.json",
+  $schema: "https://zed.dev/schema/themes/v0.2.0.json",
   name: theme_name,
   author: author,
   themes: [
